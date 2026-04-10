@@ -1,0 +1,66 @@
+@use 'sass:color';
+
+// ─── Sidebar nav ───────────────────────────────────────────────────────────────
+
+.nav {
+  padding: 30px 16px;
+  flex: 1;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 30px;
+  font-family: $font-primary;
+  font-size: 15px;
+  font-weight: 500;
+  color: $color-black;
+  transition: background $transition-base;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &:hover {
+    background: rgba($color-black, 0.08);
+  }
+}
+
+.nav__item--active .nav__link {
+  background: $color-active;
+  color: $color-white;
+
+  &:hover {
+    background: color.adjust($color-active, $lightness: -8%);
+  }
+}
+
+.nav__icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.85;
+  transition: transform $transition-base;
+
+  .nav__link:hover & {
+    transform: scale(1.08);
+  }
+}
+
+.nav__item--active .nav__icon {
+  background: $color-white;
+  opacity: 1;
+}
+
+.nav__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

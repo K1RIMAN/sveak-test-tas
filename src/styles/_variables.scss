@@ -1,0 +1,31 @@
+// ─── Breakpoints ───────────────────────────────────────────────────────────────
+$bp-mobile-max:  639px;
+$bp-tablet-min:  640px;
+$bp-tablet-max:  1023px;
+$bp-desktop-sm:  1024px;
+$bp-desktop-md:  1280px;
+
+// ─── Colors ────────────────────────────────────────────────────────────────────
+$color-bg-desktop:  #D6BDFF;
+$color-bg-tablet:   #95D9FF;
+$color-bg-mobile:   #ADFCC8;
+$color-active:      #FF39EB;
+$color-black:       #000000;
+$color-white:       #FFFFFF;
+$color-card-bg:     rgba(#D6BDFF, 0.35);   // карточка-плейсхолдер
+$color-divider:     rgba(#000000, 0.15);
+
+// ─── Sidebar ───────────────────────────────────────────────────────────────────
+$sidebar-width: 260px;
+
+// ─── Cards ─────────────────────────────────────────────────────────────────────
+$card-gap:   20px;
+$card-radius: 12px;
+
+// ─── Typography ────────────────────────────────────────────────────────────────
+$font-primary:   'Nunito', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+
+// ─── Transitions ───────────────────────────────────────────────────────────────
+$transition-base: 0.25s ease;
+$transition-slow: 0.35s ease;

@@ -1,0 +1,11 @@
+// ─── Entry point ───────────────────────────────────────────────────────────────
+// Using @import (legacy) for simplicity — variables are globally available.
+
+@import 'variables';
+@import 'reset';
+@import 'layout';
+@import 'sidebar';
+@import 'header';
+@import 'mobile-menu';
+@import 'cards';
+@import 'footer';

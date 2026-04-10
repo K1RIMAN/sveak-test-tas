@@ -1,0 +1,19 @@
+{
+  "name": "sveak",
+  "version": "1.0.0",
+  "description": "SVEAK CSS Test Task - Frontend Layout",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^8.0.1",
+    "gh-pages": "^6.3.0",
+    "sass": "^1.99.0",
+    "vite": "^8.0.8",
+    "vite-plugin-pug": "^0.4.1"
+  }
+}

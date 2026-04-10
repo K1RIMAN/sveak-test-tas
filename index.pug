@@ -1,0 +1,96 @@
+- var cards = Array.from({length: 25}, (_, i) => i)
+- var loremTitles = ['Норвежский лес', 'Дикие истории', 'Последний рассвет', 'Синяя лагуна', 'Город грёз', 'Тихая гавань', 'Горизонт', 'Туманный берег', 'Ночной дозор', 'Звёздный путь', 'Летний ветер', 'Осенний лист', 'Зимний сон', 'Весенний дождь', 'Морская пена', 'Лесная тропа', 'Горный поток', 'Речная долина', 'Степной орёл', 'Полярная звезда', 'Алмазный берег', 'Бирюзовый залив', 'Коралловый риф', 'Лавандовые поля', 'Янтарный закат']
+- var loremDescs = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium eaque ipsa quae ab illo inventore veritatis.', 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.', 'Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint molestiae.']
+- var tagGroups = [['природа', 'фото'], ['путешествия', 'видео'], ['музыка', 'арт'], ['кино', 'обзор'], ['спорт', 'жизнь']]
+
+//- ─── Sidebar (desktop only) ───────────────────────────────────────────────────
+aside.sidebar
+  nav.nav
+    ul.nav__list
+      li.nav__item.nav__item--active
+        a.nav__link(href="#")
+          span.nav__icon(aria-hidden="true")
+          span.nav__label Главная
+      li.nav__item
+        a.nav__link(href="#")
+          span.nav__icon(aria-hidden="true")
+          span.nav__label Каталог
+      li.nav__item
+        a.nav__link(href="#")
+          span.nav__icon(aria-hidden="true")
+          span.nav__label Избранное
+      li.nav__item
+        a.nav__link(href="#")
+          span.nav__icon(aria-hidden="true")
+          span.nav__label Профиль
+      li.nav__item
+        a.nav__link(href="#")
+          span.nav__icon(aria-hidden="true")
+          span.nav__label Настройки
+
+//- ─── Mobile menu backdrop ─────────────────────────────────────────────────────
+div.mobile-menu-backdrop(aria-hidden="true")
+
+//- ─── Mobile menu ──────────────────────────────────────────────────────────────
+nav.mobile-menu#mobile-menu(aria-hidden="true")
+  ul.mobile-menu__list
+    li.mobile-menu__item.mobile-menu__item--active
+      a.mobile-menu__link(href="#")
+        span.mobile-menu__icon(aria-hidden="true")
+        span.mobile-menu__label Главная
+    li.mobile-menu__item
+      a.mobile-menu__link(href="#")
+        span.mobile-menu__icon(aria-hidden="true")
+        span.mobile-menu__label Каталог
+    li.mobile-menu__item
+      a.mobile-menu__link(href="#")
+        span.mobile-menu__icon(aria-hidden="true")
+        span.mobile-menu__label Избранное
+    li.mobile-menu__item
+      a.mobile-menu__link(href="#")
+        span.mobile-menu__icon(aria-hidden="true")
+        span.mobile-menu__label Профиль
+
+//- ─── Main ─────────────────────────────────────────────────────────────────────
+main.main
+  .main__inner
+    //- Header
+    header.header
+      button.header__burger(aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu")
+        span.header__burger-bar
+        span.header__burger-bar
+        span.header__burger-bar
+
+      .header__actions
+        button.header__btn(aria-label="Поиск")
+          svg(xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true")
+            circle(cx="9.5" cy="9.5" r="8" stroke="currentColor" stroke-width="2")
+            line(x1="15.5" y1="15.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round")
+        button.header__btn(aria-label="Вид сеткой")
+          svg(xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true")
+            rect(x="0" y="0" width="8" height="8" rx="2" fill="currentColor")
+            rect(x="12" y="0" width="8" height="8" rx="2" fill="currentColor")
+            rect(x="0" y="12" width="8" height="8" rx="2" fill="currentColor")
+            rect(x="12" y="12" width="8" height="8" rx="2" fill="currentColor")
+        button.header__btn(aria-label="Медиа")
+          svg(xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none" aria-hidden="true")
+            polygon(points="0,0 18,11 0,22" fill="currentColor")
+
+    //- Content
+    .main__content
+      //- Cards grid
+      .cards
+        each i in cards
+          article.card
+            .card__thumb
+              img.card__img(src=`https://picsum.photos/seed/${i + 10}/400/400` alt=loremTitles[i % loremTitles.length] loading="lazy" width="400" height="400")
+            .card__body
+              h2.card__title= loremTitles[i % loremTitles.length]
+              p.card__desc= loremDescs[i % loremDescs.length]
+              ul.card__tags
+                each tag in tagGroups[i % tagGroups.length]
+                  li.card__tag= tag
+
+      //- Footer
+      footer.footer
+        p.footer__text What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma__get_file_nodes",
+      "mcp__figma__get_file_info"
+    ]
+  }
+}
